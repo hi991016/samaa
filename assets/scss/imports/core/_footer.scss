@@ -3,15 +3,13 @@
 
 .c-footer {
   &_container {
-    padding: 0 45px 45px;
+    padding: 180px 45px 45px;
     text-align: center;
 
     &.--home {
       text-align: right;
-    }
 
-    @include maxW {
-      &.--home {
+      & > * {
         display: none;
       }
     }
@@ -19,5 +17,15 @@
 
   &_copyright {
     font-size: 1.4rem;
+  }
+
+  @include maxW {
+    &_container {
+      padding: 80px 20px 20px;
+    }
+
+    &_copyright {
+      font-size: 1.2rem;
+    }
   }
 }

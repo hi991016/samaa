@@ -132,4 +132,7 @@ const initMenu = () => {
 };
 
 // ### ===== DOMCONTENTLOADED ===== ###
+window.addEventListener("pageshow", () => {
+  document.body.classList.remove("fadeout");
+});
 window.addEventListener("DOMContentLoaded", init);
