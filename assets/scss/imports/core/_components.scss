@@ -14,6 +14,18 @@
   }
 }
 
+.c-inner {
+  position: relative;
+  width: 48.611vw;
+  margin: 0 auto;
+  padding: 250px 0 0;
+
+  @include maxW {
+    width: 100%;
+    padding: 150px 60px 0;
+  }
+}
+
 .c-picture {
   display: block;
   position: relative;

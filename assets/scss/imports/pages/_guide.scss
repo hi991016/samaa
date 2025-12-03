@@ -5,13 +5,6 @@
 .guidepage {
   // ===== guide =====
   .guide {
-    &_inner {
-      position: relative;
-      width: 48.611vw;
-      margin: 0 auto;
-      padding: 250px 0 0;
-    }
-
     &_content {
       dl {
         font-family: var(--noto-fonts);
@@ -38,11 +31,6 @@
     }
 
     @include maxW {
-      &_inner {
-        width: 100%;
-        padding: 150px 60px 0;
-      }
-
       &_content {
         dl {
           font-size: 1.2rem;
