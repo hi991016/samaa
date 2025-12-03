@@ -18,6 +18,7 @@
       width: fit-content;
       margin: 0 auto;
       pointer-events: auto;
+      font-weight: 500;
 
       .v1 {
         font-family: var(--swiss-fonts);
@@ -132,6 +133,8 @@
       margin-top: 20px;
       font-family: var(--swiss-fonts);
       font-size: 1.6rem;
+      font-weight: 500;
+      letter-spacing: 1px;
       text-align: center;
     }
 
@@ -162,7 +165,7 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-out;
-    
+
     &.--show {
       opacity: 1;
       visibility: visible;
