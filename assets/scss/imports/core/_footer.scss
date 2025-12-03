@@ -2,4 +2,22 @@
 ------------------------------------------------------------*/
 
 .c-footer {
+  &_container {
+    padding: 0 45px 45px;
+    text-align: center;
+
+    &.--home {
+      text-align: right;
+    }
+
+    @include maxW {
+      &.--home {
+        display: none;
+      }
+    }
+  }
+
+  &_copyright {
+    font-size: 1.4rem;
+  }
 }

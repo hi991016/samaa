@@ -142,12 +142,12 @@ q {
 }
 
 *:focus-visible {
-  outline: -webkit-focus-ring-color auto 1px;
+  outline: none;
   box-shadow: none;
 }
 
 a:focus:not(:link:active) {
-  outline: -webkit-focus-ring-color auto 1px;
+  outline: none;
   box-shadow: none;
 }
 

@@ -29,10 +29,10 @@ body {
   background-color: var(--main-bg-cl);
   color: var(--main-text-cl);
   font-family: var(--main-fonts);
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.6rem;
   line-height: 1;
-  letter-spacing: 0;
+  letter-spacing: 1px;
   position: relative;
   overflow-x: hidden;
 
@@ -67,6 +67,6 @@ main {
 }
 
 ::selection {
-  background: #dcdcdc;
-  color: #000;
+  background: #e03c31;
+  color: #fff;
 }
