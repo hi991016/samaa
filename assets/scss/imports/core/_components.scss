@@ -1,6 +1,19 @@
 /* Components
 ------------------------------------------------------------*/
 
+.c-title {
+  font-family: var(--swiss-fonts);
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  @include maxW {
+    font-size: 1.5rem;
+  }
+}
+
 .c-picture {
   display: block;
   position: relative;

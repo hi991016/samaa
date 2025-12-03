@@ -36,15 +36,6 @@
     }
 
     &_content {
-      h2 {
-        font-family: var(--swiss-fonts);
-        font-size: 1.8rem;
-        font-weight: 500;
-        line-height: 1.25;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-      }
-
       p {
         font-size: 1.4rem;
         line-height: 1.7;
@@ -71,10 +62,6 @@
 
       &_content {
         text-align: center;
-
-        h2 {
-          font-size: 1.5rem;
-        }
 
         p {
           font-size: 1.2rem;
