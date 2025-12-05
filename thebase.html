@@ -55,7 +55,7 @@
     {BackgroundTag}
 
     <!-- @master css -->
-    <link rel="stylesheet" href="https://basefile.akamaized.net/myagl-base-shop/693287230b679/style.min.css">
+    <link rel="stylesheet" href="https://basefile.akamaized.net/myagl-base-shop/69329a6839072/style.min.css">
 
     <!-- @adobe fonts -->
     <link rel="stylesheet" href="https://use.typekit.net/lzo7mzq.css">
@@ -166,7 +166,7 @@
                 </ul>
                 <ul>
                     <li class="sp-only" data-menu-toggle>MENU</li>
-                    <li><a href="/cart/">CART <span>0</span></a></li>
+                    <li><a href="/cart/" data-menu-cart>CART <span class="cart-qty">0</span></a></li>
                 </ul>
             </div>
             {block:IndexPage}
@@ -438,7 +438,10 @@
                                 <p>{ItemPrice}</p>
                             </div>
                             <div class="product_meta">
-                                <button type="submit">ADD TO CART</button>
+                                {block:PurchaseForm}
+                                <div hidden>{ItemSelectTag}</div>
+                                {PurchaseButton}
+                                {/block:PurchaseForm}
                             </div>
                             <div class="product_info">
                                 <h3>DETAIL</h3>
@@ -453,19 +456,25 @@
                         </div>
                     </div>
                 </div>
+
+                {block:HasRelatedItems}
                 <div class="product_other">
                     <h3>OTHER PRODUCTS</h3>
                     <div class="product_other_list">
+                        {block:RelatedItems}
                         <div class="product_other_items">
-                            <a href="/products/" class="c-card">
+                            <a href="{RelatedItemPageURL}" class="c-card">
                                 <picture class="c-picture">
-                                    <img class="lazy" data-src="/assets/images/product_1.jpg" alt="Products"
-                                        draggable="false" width="255" height="255">
+                                    <img class="lazy"
+                                        data-src="{block:ItemImage1}{ItemImage1URL-500}{/block:ItemImage1}"
+                                        alt="{RelatedItemTitle}" draggable="false" width="255" height="255">
                                 </picture>
                             </a>
                         </div>
+                        {/block:RelatedItems}
                     </div>
                 </div>
+                {/block:HasRelatedItems}
             </div>
         </section>
         <!-- //product -->
@@ -512,8 +521,8 @@
     <!-- @@footer -->
 
     <!-- @script -->
-    <script src="https://basefile.akamaized.net/myagl-base-shop/69324fb07a152/libs.js" defer="defer"></script>
-    <script src="https://basefile.akamaized.net/myagl-base-shop/69328632393eb/main.js" defer="defer"></script>
+    <script src="https://basefile.akamaized.net/myagl-base-shop/693290d73ba41/libs.js" defer="defer"></script>
+    <script src="https://basefile.akamaized.net/myagl-base-shop/69329bfb1d4fa/main.js" defer="defer"></script>
 </body>
 
 </html>

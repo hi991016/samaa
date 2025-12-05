@@ -85,8 +85,9 @@ document.addEventListener("click", (evt) => {
 
 // ===== menu =====
 const initMenu = () => {
-  const [menus, toggleMenus] = [
+  const [menus, toggleCart, toggleMenus] = [
     document.querySelector("[data-menu]"),
+    document.querySelector("[data-menu-cart]"),
     document.querySelectorAll("[data-menu-toggle]"),
   ];
   if (!menus || !toggleMenus.length) return;
@@ -110,6 +111,12 @@ const initMenu = () => {
       toggleMenus.forEach((btn) => (btn.textContent = "Menu"));
       detectScroll(false);
     });
+  });
+
+  // # toggle cart
+  toggleCart.addEventListener("click", function (e) {
+    e.preventDefault();
+    document.querySelector("#baseMenu .cart > a").click();
   });
 };
 
