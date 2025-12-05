@@ -1,6 +1,19 @@
 /* Components
 ------------------------------------------------------------*/
 
+.c-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--app-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
 .c-title {
   font-family: var(--swiss-fonts);
   font-size: 1.8rem;
