@@ -55,7 +55,7 @@
     {BackgroundTag}
 
     <!-- @master css -->
-    <link rel="stylesheet" href="https://basefile.akamaized.net/myagl-base-shop/69327a6cd2b28/style.min.css">
+    <link rel="stylesheet" href="https://basefile.akamaized.net/myagl-base-shop/693287230b679/style.min.css">
 
     <!-- @adobe fonts -->
     <link rel="stylesheet" href="https://use.typekit.net/lzo7mzq.css">
@@ -152,7 +152,12 @@
             </div>
             <div class="c-header_left">
                 <ul class="pc-only">
-                    <li class="{block:IndexPage}--active{/block:IndexPage}"><a href="{IndexPageURL}">PRODUCT</a></li>
+                    <li class="
+                        {block:IndexPage}--active{/block:IndexPage} 
+                        {block:ItemPage}--active{/block:ItemPage}
+                        ">
+                        <a href="{IndexPageURL}">PRODUCT</a>
+                    </li>
                     <li class="{block:AboutPage}--active{/block:AboutPage}"><a href="{AboutPageURL}">INFORMATION</a>
                     </li>
                     <li class="{block:LawPage}--active{/block:LawPage}"><a href="{LawPageURL}">GUIDE</a></li>
@@ -298,11 +303,17 @@
                 <div class="product_list" id="mainContent">
                     {block:Items}
                     <div class="product_items">
-                        <a href="/products/" class="c-card">
+                        <a href="{ItemPageURL}" class="c-card">
                             <picture class="c-picture">
-                                <img class="lazy" data-src="/assets/images/product_1.jpg" alt="Products"
-                                    draggable="false" width="350" height="350">
+                                <img class="lazy"
+                                    data-src="{block:ItemImage1}{ItemImage1URL-300}{/block:ItemImage1}{block:NoItemImage1}{ItemNoImageURL}{/block:NoItemImage1}"
+                                    alt="{ItemTitle}" draggable="false" width="350" height="350">
                             </picture>
+                            {block:NoItemStock}
+                            <div class="product_label">
+                                <p>sold out</p>
+                            </div>
+                            {/block:NoItemStock}
                         </a>
                     </div>
                     {/block:Items}
@@ -312,9 +323,8 @@
                         <p>Sorry, no products found!</p>
                     </div>
                     {/block:NoItems}
-
-                    <div id="loading" style="display: none;text-align: center;">LOADING</div>
                 </div>
+                <div id="loading" style="display: none;text-align: center;">LOADING</div>
             </div>
         </section>
         <!-- //product -->
@@ -341,6 +351,11 @@
                             $('#mainContent').append(data);
                             next_page = eval(next_page) + 1;
                             $('#next_page').text(next_page);
+
+                            // update lazyload
+                            setTimeout(() => {
+                                window.lazyLoadInstance.update();
+                            }, 1000);
                         },
                         complete: function () {
                             process_flg = false;
@@ -405,8 +420,27 @@
 
     <!-- @script -->
     <script src="https://basefile.akamaized.net/myagl-base-shop/69324fb07a152/libs.js" defer="defer"></script>
-    <script src="https://basefile.akamaized.net/myagl-base-shop/69324f0fe1f7b/main.js" defer="defer"></script>
+    <script src="https://basefile.akamaized.net/myagl-base-shop/69328632393eb/main.js" defer="defer"></script>
 </body>
 
 </html>
 {/block:NotLoadItemsPage}
+
+{block:LoadItemsPage}
+{block:Items}
+<div class="product_items">
+    <a href="{ItemPageURL}" class="c-card">
+        <picture class="c-picture">
+            <img class="lazy"
+                data-src="{block:ItemImage1}{ItemImage1URL-300}{/block:ItemImage1}{block:NoItemImage1}{ItemNoImageURL}{/block:NoItemImage1}"
+                alt="{ItemTitle}" draggable="false" width="350" height="350">
+        </picture>
+        {block:NoItemStock}
+        <div class="product_label">
+            <p>sold out</p>
+        </div>
+        {/block:NoItemStock}
+    </a>
+</div>
+{/block:Items}
+{/block:LoadItemsPage}

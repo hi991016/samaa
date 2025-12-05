@@ -22,7 +22,7 @@ const init = () => {
   // # init product swipers
   initProductSwipers();
   // # lazy load
-  const ll = new LazyLoad({
+  window.lazyLoadInstance = new LazyLoad({
     threshold: 100,
     elements_selector: ".lazy",
   });
