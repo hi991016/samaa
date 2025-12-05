@@ -375,7 +375,100 @@
     <!-- ----------------------------------------------------------------------- -->
     {block:ItemPage}
     <main class="productpage">
-        product
+        <!-- product// -->
+        <section class="product">
+            <div class="product_container">
+                <div class="product_detail">
+                    <div class="product_detail_wrap">
+                        <div class="product_detail_l">
+                            <div class="product_detail_sticky">
+                                <div class="product_swiper" data-product-swiper>
+                                    <div class="swiper-wrapper">
+                                        <div class="product_swiper_slide swiper-slide">
+                                            <picture class="c-picture">
+                                                <img class="lazy"
+                                                    data-src="{block:ItemImage1}{ItemImage1URL-500}{/block:ItemImage1}"
+                                                    alt="{ItemTitle}" draggable="false" width="450" height="450">
+                                            </picture>
+                                        </div>
+                                        {block:ItemImage2}
+                                        <div class="product_swiper_slide swiper-slide">
+                                            <picture class="c-picture">
+                                                <img class="lazy"
+                                                    data-src="{block:ItemImage2}{ItemImage2URL-500}{/block:ItemImage2}"
+                                                    alt="{ItemTitle}" draggable="false" width="450" height="450">
+                                            </picture>
+                                        </div>
+                                        {/block:ItemImage2}
+                                        {block:ItemImage3}
+                                        <div class="product_swiper_slide swiper-slide">
+                                            <picture class="c-picture">
+                                                <img class="lazy"
+                                                    data-src="{block:ItemImage3}{ItemImage3URL-500}{/block:ItemImage3}"
+                                                    alt="{ItemTitle}" draggable="false" width="450" height="450">
+                                            </picture>
+                                        </div>
+                                        {/block:ItemImage3}
+                                        {block:ItemImage4}
+                                        <div class="product_swiper_slide swiper-slide">
+                                            <picture class="c-picture">
+                                                <img class="lazy"
+                                                    data-src="{block:ItemImage4}{ItemImage4URL-500}{/block:ItemImage4}"
+                                                    alt="{ItemTitle}" draggable="false" width="450" height="450">
+                                            </picture>
+                                        </div>
+                                        {/block:ItemImage4}
+                                        {block:ItemImage5}
+                                        <div class="product_swiper_slide swiper-slide">
+                                            <picture class="c-picture">
+                                                <img class="lazy"
+                                                    data-src="{block:ItemImage5}{ItemImage5URL-500}{/block:ItemImage5}"
+                                                    alt="{ItemTitle}" draggable="false" width="450" height="450">
+                                            </picture>
+                                        </div>
+                                        {/block:ItemImage5}
+                                    </div>
+                                    <div class="product_swiper_pagination swiper-pagination"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product_detail_r">
+                            <div class="product_header">
+                                <h2>{ItemTitle}</h2>
+                                <p>{ItemPrice}</p>
+                            </div>
+                            <div class="product_meta">
+                                <button type="submit">ADD TO CART</button>
+                            </div>
+                            <div class="product_info">
+                                <h3>DETAIL</h3>
+                                <div class="product_info_content">
+                                    {ItemDetail}
+                                </div>
+                                <div class="product_info_guide">
+                                    <a href="#">> 送料・配送方法について</a>
+                                    <a href="#">> お支払い方法について</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product_other">
+                    <h3>OTHER PRODUCTS</h3>
+                    <div class="product_other_list">
+                        <div class="product_other_items">
+                            <a href="/products/" class="c-card">
+                                <picture class="c-picture">
+                                    <img class="lazy" data-src="/assets/images/product_1.jpg" alt="Products"
+                                        draggable="false" width="255" height="255">
+                                </picture>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //product -->
     </main>
     {/block:ItemPage}
 

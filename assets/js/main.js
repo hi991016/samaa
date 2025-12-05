@@ -5,10 +5,8 @@ const isMobile = window.matchMedia("(max-width: 1024px)");
 const eventsTrigger = ["pageshow", "scroll"];
 const detectScroll = (detect) => {
   if (detect) {
-    lenis.stop();
     document.body.style.overflow = "hidden";
   } else {
-    lenis.start();
     document.body.style.removeProperty("overflow");
   }
 };
@@ -27,17 +25,6 @@ const init = () => {
     elements_selector: ".lazy",
   });
 };
-
-// ===== lenis =====
-const lenis = new Lenis({
-  lerp: 0.05,
-  smoothWheel: true,
-});
-const raf = (t) => {
-  lenis.raf(t);
-  requestAnimationFrame(raf);
-};
-requestAnimationFrame(raf);
 
 // ===== app height =====
 const appHeight = () => {
