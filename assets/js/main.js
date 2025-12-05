@@ -19,6 +19,8 @@ const init = () => {
   appHeight();
   // # init menu
   initMenu();
+  // # init product swipers
+  initProductSwipers();
   // # lazy load
   const ll = new LazyLoad({
     threshold: 100,
@@ -28,15 +30,8 @@ const init = () => {
 
 // ===== lenis =====
 const lenis = new Lenis({
-  duration: 1.0,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(1 - t, 2.5)),
-  smooth: true,
-  mouseMultiplier: 1.0,
-  smoothTouch: true,
-  touchMultiplier: 1.5,
-  infinite: false,
-  direction: "vertical",
-  gestureDirection: "vertical",
+  lerp: 0.05,
+  smoothWheel: true,
 });
 const raf = (t) => {
   lenis.raf(t);
@@ -128,6 +123,57 @@ const initMenu = () => {
       toggleMenus.forEach((btn) => (btn.textContent = "Menu"));
       detectScroll(false);
     });
+  });
+};
+
+// ===== products =====
+const initProductSwipers = () => {
+  const containers = document.querySelectorAll("[data-product-swiper]");
+  if (!containers.length) return;
+
+  const swipers = [];
+
+  containers.forEach((container) => {
+    const wrapper = container.querySelector(".swiper-wrapper");
+    const slides = wrapper.querySelectorAll(".swiper-slide");
+
+    // init swiper
+    const swiper = new Swiper(container, {
+      loop: true,
+      speed: 200,
+      effect: "fade",
+      slidesPerView: 1,
+      allowTouchMove: false,
+      pagination: {
+        el: container.querySelector(".swiper-pagination"),
+        clickable: true,
+        renderBullet: (index, className) => {
+          if (slides >= slides.length) return "";
+          return `<span class="${className}">${index + 1}</span>`;
+        },
+      },
+      on: {
+        slideChange: (swiper) => {
+          setActiveBullet(swiper, slides.length);
+        },
+      },
+    });
+
+    // push swiper
+    swipers.push(swiper);
+  });
+
+  return swipers;
+};
+
+// # active bullet when slide change
+const setActiveBullet = (swiper, realSlidesCount) => {
+  const bullets = swiper.pagination.bullets;
+  bullets.forEach((bullet, idx) => {
+    bullet.classList.toggle(
+      swiper.params.pagination.bulletActiveClass,
+      idx === swiper.realIndex % realSlidesCount
+    );
   });
 };
 
