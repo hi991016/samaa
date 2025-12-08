@@ -85,9 +85,8 @@ document.addEventListener("click", (evt) => {
 
 // ===== menu =====
 const initMenu = () => {
-  const [menus, toggleCart, toggleMenus] = [
+  const [menus, toggleMenus] = [
     document.querySelector("[data-menu]"),
-    document.querySelector("[data-menu-cart]"),
     document.querySelectorAll("[data-menu-toggle]"),
   ];
   if (!menus || !toggleMenus.length) return;
@@ -114,10 +113,10 @@ const initMenu = () => {
   });
 
   // # toggle cart
-  toggleCart.addEventListener("click", function (e) {
-    e.preventDefault();
-    document.querySelector("#baseMenu .cart > a").click();
-  });
+  // toggleCart.addEventListener("click", function (e) {
+  //   e.preventDefault();
+  //   document.querySelector("#baseMenu .cart > a").click();
+  // });
 };
 
 // ===== products =====

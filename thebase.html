@@ -55,7 +55,7 @@
     {BackgroundTag}
 
     <!-- @master css -->
-    <link rel="stylesheet" href="https://basefile.akamaized.net/myagl-base-shop/6932a7aa6899f/style.min.css">
+    <link rel="stylesheet" href="https://basefile.akamaized.net/myagl-base-shop/6932a7aa6899f/style.min.css?{UpdateTime}">
 
     <!-- @adobe fonts -->
     <link rel="stylesheet" href="https://use.typekit.net/lzo7mzq.css">
@@ -163,7 +163,7 @@
                 </ul>
                 <ul>
                     <li class="sp-only" data-menu-toggle>MENU</li>
-                    <li><a href="#" data-menu-cart>CART <span class="cart-qty">0</span></a></li>
+                    <li><a href="{AddToCartURL}">CART <span class="cart-qty">0</span></a></li>
                 </ul>
             </div>
             {block:IndexPage}
@@ -302,7 +302,7 @@
                         <a href="{ItemPageURL}" class="c-card">
                             <picture class="c-picture">
                                 <img class="lazy"
-                                    data-src="{block:ItemImage1}{ItemImage1URL-500}{/block:ItemImage1}"
+                                    data-src="{block:ItemImage1}{ItemImage1URL-origin}{/block:ItemImage1}{block:NoItemImage1}{ItemNoImageURL}{/block:NoItemImage1}"
                                     alt="{ItemTitle}" draggable="false" width="350" height="350">
                             </picture>
                             {block:NoItemStock}
@@ -383,7 +383,7 @@
                                         <div class="product_swiper_slide swiper-slide">
                                             <picture class="c-picture">
                                                 <img class="lazy"
-                                                    data-src="{block:ItemImage1}{ItemImage1URL-500}{/block:ItemImage1}"
+                                                    data-src="{block:ItemImage1}{ItemImage1URL-origin}{/block:ItemImage1}{block:NoItemImage1}{ItemNoImageURL}{/block:NoItemImage1}"
                                                     alt="{ItemTitle}" draggable="false" width="450" height="450">
                                             </picture>
                                         </div>
@@ -391,7 +391,7 @@
                                         <div class="product_swiper_slide swiper-slide">
                                             <picture class="c-picture">
                                                 <img class="lazy"
-                                                    data-src="{block:ItemImage2}{ItemImage2URL-500}{/block:ItemImage2}"
+                                                    data-src="{block:ItemImage2}{ItemImage2URL-origin}{/block:ItemImage2}{block:NoItemImage2}{ItemNoImageURL}{/block:NoItemImage2}"
                                                     alt="{ItemTitle}" draggable="false" width="450" height="450">
                                             </picture>
                                         </div>
@@ -400,7 +400,7 @@
                                         <div class="product_swiper_slide swiper-slide">
                                             <picture class="c-picture">
                                                 <img class="lazy"
-                                                    data-src="{block:ItemImage3}{ItemImage3URL-500}{/block:ItemImage3}"
+                                                    data-src="{block:ItemImage3}{ItemImage3URL-origin}{/block:ItemImage3}{block:NoItemImage3}{ItemNoImageURL}{/block:NoItemImage3}"
                                                     alt="{ItemTitle}" draggable="false" width="450" height="450">
                                             </picture>
                                         </div>
@@ -409,7 +409,7 @@
                                         <div class="product_swiper_slide swiper-slide">
                                             <picture class="c-picture">
                                                 <img class="lazy"
-                                                    data-src="{block:ItemImage4}{ItemImage4URL-500}{/block:ItemImage4}"
+                                                    data-src="{block:ItemImage4}{ItemImage4URL-origin}{/block:ItemImage4}{block:NoItemImage4}{ItemNoImageURL}{/block:NoItemImage4}"
                                                     alt="{ItemTitle}" draggable="false" width="450" height="450">
                                             </picture>
                                         </div>
@@ -418,7 +418,7 @@
                                         <div class="product_swiper_slide swiper-slide">
                                             <picture class="c-picture">
                                                 <img class="lazy"
-                                                    data-src="{block:ItemImage5}{ItemImage5URL-500}{/block:ItemImage5}"
+                                                    data-src="{block:ItemImage4}{ItemImage4URL-origin}{/block:ItemImage4}{block:NoItemImage4}{ItemNoImageURL}{/block:NoItemImage4}"
                                                     alt="{ItemTitle}" draggable="false" width="450" height="450">
                                             </picture>
                                         </div>
@@ -830,8 +830,8 @@
     <!-- @@footer -->
 
     <!-- @script -->
-    <script src="https://basefile.akamaized.net/myagl-base-shop/693290d73ba41/libs.js" defer="defer"></script>
-    <script src="https://basefile.akamaized.net/myagl-base-shop/6932a79901e2f/main.js" defer="defer"></script>
+    <script src="https://basefile.akamaized.net/myagl-base-shop/693290d73ba41/libs.js?{UpdateTime}" defer="defer"></script>
+    <script src="https://basefile.akamaized.net/myagl-base-shop/6932a79901e2f/main.js?{UpdateTime}" defer="defer"></script>
 </body>
 
 </html>
