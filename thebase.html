@@ -39,7 +39,8 @@
     {BackgroundTag}
 
     <!-- @master css -->
-    <link rel="stylesheet" href="https://basefile.akamaized.net/myagl-base-shop/6932a7aa6899f/style.min.css?{UpdateTime}">
+    <link rel="stylesheet"
+        href="https://basefile.akamaized.net/myagl-base-shop/6932a7aa6899f/style.min.css?{UpdateTime}">
 
     <!-- @adobe fonts -->
     <link rel="stylesheet" href="https://use.typekit.net/lzo7mzq.css">
@@ -51,7 +52,25 @@
         href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@500&family=Noto+Sans+JP:wght@400;500&family=Overpass+Mono:wght@500&display=swap"
         rel="stylesheet">
 
-    <title>{PageTitle}</title>
+    {block:IndexPage}
+    <title>SAMAA_ ONLINE STORE</title>
+    {/block:IndexPage}
+
+    {block:ItemPage}
+    <title>{ItemTitle} ｜ SAMAA_ ONLINE STORE</title>
+    {/block:ItemPage}
+
+    {block:AboutPage}
+    <title>INFORMATION ｜ SAMAA_ ONLINE STORE</title>
+    {/block:AboutPage}
+
+    {block:LawPage}
+    <title>GUIDE ｜ SAMAA_ ONLINE STORE</title>
+    {/block:LawPage}
+
+    {block:PrivacyPage}
+    <title>PRIVACY POLICY ｜ SAMAA_ ONLINE STORE</title>
+    {/block:PrivacyPage}
 </head>
 
 <body class="fadeout">
@@ -147,7 +166,7 @@
                 </ul>
                 <ul>
                     <li class="sp-only" data-menu-toggle>MENU</li>
-                    <li><a href="{AddToCartURL}">CART <span class="cart-qty">0</span></a></li>
+                    <li><a href="{AddToCartURL}" data-menu-cart>CART <span class="cart-qty">0</span></a></li>
                 </ul>
             </div>
             {block:IndexPage}
@@ -814,8 +833,10 @@
     <!-- @@footer -->
 
     <!-- @script -->
-    <script src="https://basefile.akamaized.net/myagl-base-shop/693290d73ba41/libs.js?{UpdateTime}" defer="defer"></script>
-    <script src="https://basefile.akamaized.net/myagl-base-shop/6932a79901e2f/main.js?{UpdateTime}" defer="defer"></script>
+    <script src="https://basefile.akamaized.net/myagl-base-shop/693290d73ba41/libs.js?{UpdateTime}"
+        defer="defer"></script>
+    <script src="https://basefile.akamaized.net/myagl-base-shop/693659de5080d/main.js?{UpdateTime}"
+        defer="defer"></script>
 </body>
 
 </html>
