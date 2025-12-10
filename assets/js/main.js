@@ -170,6 +170,18 @@ const setActiveBullet = (swiper, realSlidesCount) => {
   });
 };
 
+// ===== toggle =====
+const toggleModal = () => {
+  const shipping = document.querySelector("[data-toggle-shipping]");
+  if (!shipping) return;
+
+  shipping.addEventListener("click", function (e) {
+    e.preventDefault();
+    document.querySelector("#postageOpen").click();
+  });
+};
+toggleModal();
+
 // ### ===== DOMCONTENTLOADED ===== ###
 window.addEventListener("pageshow", () => {
   document.body.classList.remove("fadeout");
