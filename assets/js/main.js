@@ -177,7 +177,7 @@ const toggleModal = () => {
 
   shipping.addEventListener("click", function (e) {
     e.preventDefault();
-    document.querySelector("#postageOpen").click();
+    document.querySelector("#postageOpen")?.click();
   });
 };
 toggleModal();
